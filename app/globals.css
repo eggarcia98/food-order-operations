@@ -1,0 +1,150 @@
+@import "tailwindcss";
+
+:root {
+  
+  --font-guayacos: 'Fredoka', "Helvetica Neue", sans-serif;
+  --font-bungee: 'Bungee', "Helvetica Neue", sans-serif;
+  --font-ibm-plex-mono: 'IBM Plex Mono', "Helvetica Neue", monospace;
+
+  --color-background: #F9F7F4;
+  --color-cream: #FFFBF7;
+  --color-soft-pink: #F5DEDD;
+  --color-light-pink: #FCE8E7;
+  --color-rose: #D8A5A1;
+  --color-soft-purple: #E8D5F2;
+  --color-light-purple: #D4C5E8;
+  --color-accent-blue: #7BA8D1;
+  --color-soft-blue: #B8D4E8;
+  --color-foreground: #3D3935;
+  --color-text-light: #6B6A68;
+  --color-hover-overlay: rgba(216, 165, 161, 0.4);
+
+  --color-brand-blue: #7BA8D1;
+  --color-brand-dark-red: #8B6B66;
+  --color-brand-red: #C17A73;
+
+  --color-border: #E8D5D0;
+}
+
+html, body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: var(--font-guayacos);
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  letter-spacing: -0.01em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-guayacos);
+  letter-spacing: -0.02em;
+  font-weight: 400;
+}
+
+p, a, span, li {
+  font-family: var(--font-guayacos);
+}
+
+p {
+  letter-spacing: -0.005em;
+  font-weight: 300;
+}
+
+.bg-background { background-color: var(--color-background); }
+.bg-brand-blue { background-color: var(--color-brand-blue); }
+.bg-brand-red { background-color: var(--color-brand-red); }
+.bg-cream { background-color: var(--color-cream); }
+.bg-soft-pink { background-color: var(--color-soft-pink); }
+.bg-soft-blue { background-color: var(--color-soft-blue); }
+.bg-rose { background-color: var(--color-rose); }
+.bg-accent-blue { background-color: var(--color-accent-blue); }
+
+@layer utilities {
+  .font-bungee { font-family: var(--font-bungee); }
+
+  .logo-container {
+    filter: drop-shadow(0 4px 12px rgba(193, 122, 115, 0.15));
+    transition: filter 0.3s ease, transform 0.3s ease;
+  }
+  
+  .logo-container:hover {
+    filter: drop-shadow(0 8px 24px rgba(193, 122, 115, 0.25));
+    transform: translateY(-2px);
+  }
+}
+
+.text-brand-blue { color: var(--color-brand-blue); }
+.text-brand-red { color: var(--color-brand-red); }
+.text-foreground { color: var(--color-foreground); }
+.text-light { color: var(--color-text-light); }
+.text-cream { color: var(--color-cream); }
+.text-rose { color: var(--color-rose); }
+
+.btn-brand-blue { 
+  background-color: var(--color-brand-blue); 
+  color: var(--color-cream); 
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: all 0.25s ease;
+  border: none;
+  cursor: pointer;
+}
+.btn-brand-blue:hover { 
+  background-color: var(--color-accent-blue);
+  box-shadow: 0 8px 24px rgba(123, 168, 209, 0.2);
+  transform: translateY(-1px);
+}
+.btn-brand-red { 
+  background-color: var(--color-brand-red); 
+  color: var(--color-cream);
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: all 0.25s ease;
+  border: none;
+  cursor: pointer;
+}
+.btn-brand-red:hover { 
+  background-color: var(--color-rose);
+  box-shadow: 0 8px 24px rgba(216, 165, 161, 0.2);
+  transform: translateY(-1px);
+}
+
+.input-brand { 
+  border: 1px solid var(--color-border); 
+  background-color: var(--color-cream);
+  color: var(--color-foreground);
+  transition: all 0.3s ease;
+}
+.input-brand:focus { 
+  border-color: var(--color-brand-blue); 
+  box-shadow: 0 0 0 3px rgba(123, 168, 209, 0.12); 
+  outline: none; 
+}
+
+.border-brand { border-color: var(--color-border); }
+.border-brand-blue { border-color: var(--color-brand-blue); }
+.border-b-brand-red { border-bottom-color: var(--color-brand-red); }
+.border-accent-blue { border-color: var(--color-accent-blue); }
+.border-rose { border-color: var(--color-rose); }
+.ring-brand-blue { box-shadow: 0 0 0 3px rgba(123, 168, 209, 0.12); }
+
+.suggestion { background-color: transparent; }
+.suggestion:hover { background-color: rgba(123, 168, 209, 0.04); }
+
+.marquee { width: 100%; overflow: hidden; }
+.marquee__content {
+  display: inline-flex;
+  white-space: nowrap;
+  will-change: transform;
+  animation: marquee 10s linear infinite;
+}
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.text-secondary:hover { color: var(--color-brand-red); }

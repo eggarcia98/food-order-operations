@@ -3,17 +3,25 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
+    "dev": "pnpm prisma:sync && next dev",
+    "build": "prisma generate --schema ./lib/prisma/schema.prisma && next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "prisma:pull": "prisma db pull --schema ./lib/prisma/schema.prisma",
+    "prisma:generate": "prisma generate --schema ./lib/prisma/schema.prisma",
+    "prisma:sync": "pnpm prisma:pull && pnpm prisma:generate"
   },
   "dependencies": {
+    "@prisma/adapter-neon": "^6.19.3",
+    "@prisma/client": "^6.19.3",
+    "lucide-react": "^0.554.0",
     "next": "16.2.6",
     "react": "19.2.4",
-    "react-dom": "19.2.4"
+    "react-dom": "19.2.4",
+    "swr": "^2.4.1"
   },
   "devDependencies": {
+    "@eslint/eslintrc": "^3.3.5",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
@@ -21,6 +29,7 @@
     "babel-plugin-react-compiler": "1.0.0",
     "eslint": "^9",
     "eslint-config-next": "16.2.6",
+    "prisma": "^6.19.3",
     "tailwindcss": "^4",
     "typescript": "^5"
   }
