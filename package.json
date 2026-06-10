@@ -13,13 +13,14 @@
     "prisma:sync": "pnpm prisma:pull && pnpm prisma:generate"
   },
   "dependencies": {
+    "@neondatabase/serverless": "1.1.0",
+    "@opennextjs/cloudflare": "1.14.0",
     "@prisma/adapter-neon": "^6.19.3",
     "@prisma/client": "^6.19.3",
     "lucide-react": "^0.554.0",
     "next": "16.2.6",
     "react": "19.2.4",
     "react-dom": "19.2.4",
-    "@opennextjs/cloudflare": "1.14.0",
     "swr": "^2.4.1"
   },
   "devDependencies": {
@@ -33,6 +34,7 @@
     "eslint-config-next": "16.2.6",
     "prisma": "^6.19.3",
     "tailwindcss": "^4",
-    "typescript": "^5"
+    "typescript": "^5",
+    "wrangler": "4.99.0"
   }
 }
