@@ -46,7 +46,7 @@ export default function LoginPage() {
             });
 
             if (!response.ok) throw new Error("Failed to fetch orders");
-            const data = await response.json();
+            await response.json();
 
         } catch (err) {
 

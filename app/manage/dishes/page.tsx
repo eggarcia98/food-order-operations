@@ -38,8 +38,8 @@ export default function DishManagementPage() {
 
       if (!dishesResponse.ok) throw new Error("Failed to fetch dishes");
 
-      const dishesData = await dishesResponse.json();
-      setDishes(dishesData);
+            const dishesData = await dishesResponse.json() as MenuItem[];
+            setDishes(dishesData);
 
       setError(null);
     } catch (err) {

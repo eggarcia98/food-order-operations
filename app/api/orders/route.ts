@@ -11,7 +11,7 @@ export const runtime = "edge";
 export async function POST(request: Request) {
     try {
         requireAuth(request);
-        const body = await parseJsonBody(request);
+        const body = await parseJsonBody<Record<string, unknown>>(request);
         const payload = validateCreateOrderPayload(body);
         return NextResponse.json(await createOrderWithConfirmation(payload));
     } catch (error) {

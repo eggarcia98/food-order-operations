@@ -26,7 +26,7 @@ export async function GET(
         });
 
         if (!response.ok) {
-            const data = await response.json().catch(() => ({}));
+            const data = await response.json().catch(() => ({})) as Record<string, unknown>;
             return NextResponse.json(
                 { error: data?.error || "Failed to start OAuth" },
                 { status: response.status },

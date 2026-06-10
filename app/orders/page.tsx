@@ -19,7 +19,7 @@ import {
 } from "@/lib/domain";
 import { getOrderTotal, getWhatsAppLink } from "@/lib/order-messaging";
 
-const fetcher = async (url: string) => {
+const fetcher = async (url: string): Promise<Order[]> => {
     const response = await fetch(url);
     if (!response.ok) throw new Error("Failed to load orders.");
     return response.json();

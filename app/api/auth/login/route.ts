@@ -4,9 +4,8 @@ import { NextResponse } from "next/server";
 
 export async function POST(request: Request) {
     try {
-        const { name, email, password } = await request.json();
+        const { name, email, password } = await request.json() as Record<string, unknown>;
         const authUrl = process.env.AUTH_ENDPOINT;
-
 
         const response = await fetch(`${authUrl}/login`, {
             method: "POST",
@@ -17,21 +16,15 @@ export async function POST(request: Request) {
         });
 
         if (!response.ok) {
-
-            const data = await response.json();
-
+            const data = await response.json() as Record<string, unknown>;
             return NextResponse.json(
-                { error: data.error || "Login failed" },
+                { error: data?.error || "Login failed" },
                 { status: response.status }
             );
         }
 
         const data = await response.json();
-        const nextResponse = NextResponse.json(data, { status: 200 });
-        
-       
-        
-        return nextResponse;
+        return NextResponse.json(data, { status: 200 });
     } catch (error) {
         console.error("Error during login:", error);
         return NextResponse.json({ error }, { status: 500 });

@@ -9,14 +9,14 @@ export default function SocialLoginButtons() {
                 throw new Error("Failed to start OAuth");
             }
 
-            const { data } = await res.json();
+            const body = await res.json() as { data?: { url?: string } };
 
-            if (!data?.url) {
+            if (!body?.data?.url) {
                 throw new Error("Invalid OAuth response");
             }
 
             // Redirect to the Supabase OAuth Interface -> Provider
-            window.location.href = data.url;
+            window.location.href = body.data.url;
         } catch (error) {
             console.error("Google login failed:", error);
             alert("Unable to start Google login. Please try again.");
