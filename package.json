@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "pnpm prisma:sync && next dev",
     "build": "prisma generate --schema ./lib/prisma/schema.prisma && next build",
+    "deploy": "opennextjs-cloudflare build && opennextjs-cloudflare deploy",
     "start": "next start",
     "lint": "eslint",
     "prisma:pull": "prisma db pull --schema ./lib/prisma/schema.prisma",
