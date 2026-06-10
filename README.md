@@ -1,4 +1,4 @@
-# Food Order Operations
+# Food Order Operationss
 
 Staff operations dashboard for a restaurant. This application contains the internal workflows for managing orders, customers, dishes, menu variants, and order dispatch status. 
 
