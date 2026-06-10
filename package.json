@@ -6,6 +6,9 @@
     "dev": "pnpm prisma:sync && next dev",
     "build": "prisma generate --schema ./lib/prisma/schema.prisma && next build",
     "start": "next start",
+    "preview": "opennextjs-cloudflare build && wrangler dev",
+    "deploy": "opennextjs-cloudflare build && wrangler deploy",
+    "cf-typegen": "wrangler types",
     "lint": "eslint",
     "prisma:pull": "prisma db pull --schema ./lib/prisma/schema.prisma",
     "prisma:generate": "prisma generate --schema ./lib/prisma/schema.prisma",
@@ -22,6 +25,7 @@
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.3.5",
+    "@opennextjs/cloudflare": "1.19.11",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
@@ -31,6 +35,7 @@
     "eslint-config-next": "16.2.6",
     "prisma": "^6.19.3",
     "tailwindcss": "^4",
-    "typescript": "^5"
+    "typescript": "^5",
+    "wrangler": "4.99.0"
   }
 }
