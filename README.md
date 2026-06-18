@@ -19,7 +19,7 @@ Staff operations dashboard for a restaurant. This application contains the inter
 | `/signup` | Staff signup flow copied from the original app. Confirm whether self-signup should remain enabled before production use. |
 | `/auth/[provider]/callback` | OAuth callback page. |
 | `/orders` | Operations dashboard and order history. |
-| `/manage/dishes` | Dish and variant management. |
+| `/manage/dishes` | Dish and variant management. |sadas
 
 ## API Surface
 
